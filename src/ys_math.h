@@ -7,7 +7,7 @@
 #define SQRTF sqrtf
 #endif
 
-#include "types.h"
+#include "ys_types.h"
 
 /*
  *  === DATA DEFINITIONS ===
@@ -178,7 +178,7 @@ inline mat4 mat4_inverse(const mat4 a);
 inline mat4 mat4_translation_x(const f32 tx);
 inline mat4 mat4_translation_y(const f32 ty);
 inline mat4 mat4_translation_z(const f32 tz);
-inline mat4 mat4_translation(const f32 tx, const f32 ty, const f32 tx);
+inline mat4 mat4_translation(const f32 tx, const f32 ty, const f32 tz);
 inline mat4 mat4_translation_vec3(const vec3 a);
 inline mat4 mat4_translation_vec4(const vec4 a);
 inline mat4 mat4_rotation_x(const f32 xr);
@@ -718,7 +718,7 @@ inline f32 mat3_det(const mat3 a) {
         - a.m00 * a.m12 * a.m21;
 }
 
-inline f32 mat3_inverse(const mat3 a) {
+inline mat3 mat3_inverse(const mat3 a) {
     // TODO: IMPLEMENT
     return a;
 }
@@ -866,7 +866,7 @@ inline mat4 mat4_translation_z(const f32 tz) {
     return a;
 
 }
-inline mat4 mat4_translation(const f32 tx, const f32 ty, const f32 tx) {
+inline mat4 mat4_translation(const f32 tx, const f32 ty, const f32 tz) {
     mat4 a = {0};
     a.m03 = tx;
     a.m13 = ty;
@@ -876,26 +876,28 @@ inline mat4 mat4_translation(const f32 tx, const f32 ty, const f32 tx) {
 }
 
 inline mat4 mat4_translation_vec3(const vec3 a) {
-    mat4 a = {0};
-    a.m03 = a.x;
-    a.m13 = a.y;
-    a.m23 = a.z;
-    return a;
+    mat4 r = {0};
+    r.m03 = a.x;
+    r.m13 = a.y;
+    r.m23 = a.z;
+    return r;
 
 }
 
 inline mat4 mat4_translation_vec4(const vec4 a) {
-    mat4 a = {0};
-    a.m03 = a.x;
-    a.m13 = a.y;
-    a.m23 = a.z;
-    return a;
+    mat4 r = {0};
+    r.m03 = a.x;
+    r.m13 = a.y;
+    r.m23 = a.z;
+    return r;
 
 }
+
 inline mat4 mat4_rotation_x(const f32 xr) {
     // TODO: IMPLEMENT
 
 }
+
 inline mat4 mat4_rotation_y(const f32 yr) {
     // TODO: IMPLEMENT
 
