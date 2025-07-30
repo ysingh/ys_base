@@ -1,6 +1,8 @@
 #ifndef YS_GEOM_H
 #define YS_GEOM_H
 
+#include "ys_math.h"
+
 typedef struct ray2 {
     point2 origin;
     vec2 dir;
