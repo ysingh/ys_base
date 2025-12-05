@@ -1,7 +1,6 @@
 #ifndef YS_MATH_H
 #define YS_MATH_H
 
-
 #ifndef SQRTF
 #include <math.h>
 #define SQRTF sqrtf
